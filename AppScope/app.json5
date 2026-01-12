@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.hmosdemos.NetworkVideoPlayer",
+    "bundleName": "com.hmosdemos.wearable.how_to_play_videos_from_url",
     "vendor": "hmosdemos",
     "versionCode": 1000000,
     "versionName": "1.0.0",

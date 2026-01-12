@@ -1,17 +1,15 @@
-import router from '@ohos.router'
 import { ArcList, ArcListItem, ComponentContent } from '@kit.ArkUI'
+import { Player } from './NetworkVideo'
 
 
 @Builder
 function header() {
-  Column() {
     Text('Video Options')
       .fontSize(24)
       .fontWeight(FontWeight.Bold)
       .textAlign(TextAlign.Center)
       .margin({ top: 16, bottom: 12 })
       .fontColor('#8FA31E')
-  }
 }
 
 @Entry
@@ -21,12 +19,18 @@ struct VideoPlayer {
   context: UIContext = this.getUIContext()
   header: ComponentContent<object> = new ComponentContent(this.context, wrapBuilder(header))
   private uiContext: UIContext = this.getUIContext()
+  @Provide('pathStack') pathStack: NavPathStack = new NavPathStack()
 
+  @Builder
+  PageMap(name: string) {
+    if (name === 'NetworkVideo') {
+      Player()
+    }
+  }
 
   build() {
+    Navigation(this.pathStack){
     Flex() {
-      Row() {
-        Column() {
           ArcList({ header: this.header }) {
             ArcListItem() {
               Row({ space: 10 }) {
@@ -54,17 +58,20 @@ struct VideoPlayer {
                 right: 16
               })
               .onClick(() => {
-                router.pushUrl({ url: 'pages/NetworkVideo' })
+                this.pathStack.pushPathByName('NetworkVideo', null)
               });
             }
 
           }
-
-        }
-
-      }
+      
     }.width(this.watchSize)
     .height(this.watchSize)
     .backgroundColor('#556B2F')
-  }}
+  }
+    .hideTitleBar(true)
+    .hideBackButton(true)
+    .navDestination(this.PageMap)
+    .mode(NavigationMode.Stack)
+}
+}
 

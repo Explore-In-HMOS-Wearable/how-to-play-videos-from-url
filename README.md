@@ -7,10 +7,10 @@ NetworkVideoPlayer is a demo app that allows users to play videos from a given U
 # Preview
 
 <div align="left">
-  <img src="images/o2.png" width="24%">
-  <img src="images/output4.png" width="24%">
-  <img src="images/output2.png" width="24%">
-  <img src="images/output5.png" width="24%">
+  <img src="screenshots/o2.png" width="24%">
+  <img src="screenshots/output4.png" width="24%">
+  <img src="screenshots/output2.png" width="24%">
+  <img src="screenshots/output5.png" width="24%">
 </div>
 
 # Use Cases
@@ -46,5 +46,5 @@ Huawei Watch 5
 
 # LICENSE
 
-SoccerScore is distributed under the terms of the MIT License.  
+NetworkVideoPlayer is distributed under the terms of the MIT License.  
 See the [LICENSE](/LICENSE) for more information.
